@@ -11,9 +11,9 @@ class ContactsController < ApplicationController
         
         if @contact.save
             
-            name = params [:contact][:name]
-            email = params [:contact][:name]
-            body = params [:contact][:comments]
+            name = params[:contact][:name]
+            email = params[:contact][:email]
+            body = params[:contact][:comments]
             
             ContactMailer.contact_email(name, email, body).deliver
             
